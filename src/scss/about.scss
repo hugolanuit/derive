@@ -1,0 +1,73 @@
+@import "all/settings";
+
+// header {
+// 	color: $white;
+// }
+
+.about__intro {
+	max-width: 940px !important;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.about__founders {
+	@media #{$desktop} {
+		margin-top: -200px;
+	}
+}
+
+.about__founders__desc {
+	max-width: 560px;
+}
+
+.about__text {
+	p {
+		font-size: $slight_medium_size;
+		max-width: 580px;
+		margin-left: auto;
+		margin-right: auto;
+
+		&:first-child {
+			font-size: $medium_size;
+			font-family: $alternate_font;
+
+			& + p {
+				font-size: $medium_size;
+				font-family: $alternate_font;
+			}
+		}
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin-top: $vertical_rythm;
+		margin-bottom: $vertical_rythm;
+		font-size: $huge_size--mobile;
+		line-height: 1.1;
+
+	    @media #{$desktop} {
+	        font-size: $huge_size
+	    }
+	}
+}
+
+.about__intro, .about__title {
+	span {
+		position: relative;
+		opacity: 0;
+		transform: translate(0, 100%);
+		transition: opacity 700ms 600ms ease-in-out, transform 700ms 300ms cubic-bezier(0.25, 0.50, 0.3, 1);
+
+		@for $i from 1 through 10 {
+		  &:nth-child(#{$i}) {
+		  	transition: opacity 700ms (($i * 100ms) + 500ms) ease-in-out, transform 700ms (($i * 100ms) + 200ms) cubic-bezier(0.25, 0.50, 0.3, 1);
+		  }
+		}
+	}
+
+	.initialized-3 .page--initialized & {
+		span {
+			opacity: 1;
+			transform: translate(0, 0);
+		}
+	}
+}

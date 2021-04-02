@@ -1,0 +1,71 @@
+@import "all/settings";
+
+.artist_text {
+	p {
+        font-size: $slight_size;
+
+        &:first-child {
+            font-size: $medium_size;
+            font-family: $alternate_font;
+        }
+    }
+}
+
+.artist__related-container {
+	position: relative;
+	color: $white;
+
+	@supports (position: sticky) {
+		height: 160vh;
+
+		.artist__related {
+			height: 100vh;
+			position: sticky;
+			top: 0;
+		}
+	}
+}
+
+.artist__related {
+	.hero {
+		padding-bottom: $vertical_rythm*4;
+		overflow: visible;
+	}
+
+	.hero__bg {
+		animation: wave 12s ease-in-out infinite;
+	}
+
+	.slider > div {
+		overflow: visible;
+	}
+}
+
+.artist__related__counter {
+	position: absolute;
+	bottom: $vertical_rythm*2;
+	left: 50%;
+	transform: translate(-50%, 0);
+	z-index: 15;
+}
+
+.artist__related__link {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 15;
+}
+
+@keyframes wave { 
+	0% {
+		transform: translate(21vw, 0);
+		width: 121%;
+    } 50% { 
+        transform: translate(-21%, 0);
+        width: 100%;
+    } 100% { 
+        transform: translate(21vw, 0);
+        width: 121%;
+    }
+}

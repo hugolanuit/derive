@@ -1,0 +1,90 @@
+@import "all/settings";
+
+// header {
+// 	color: $white;
+// }
+
+.artwork__detail-title {
+	min-width: 100px;
+}
+
+.artwork__related {
+	position: relative;
+	overflow: hidden;
+}
+
+.artwork__related__img {
+	position: absolute;
+	width: 28%;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	// transform: translate(-50%, -50%);
+	opacity: 0.4;
+	pointer-events: none;
+
+	@media #{$desktop} {
+		width: 24%;
+	}
+
+	&:nth-child(1) {
+		animation: top-bottom 6s ease-in-out infinite;
+	}
+
+	&:nth-child(2) {
+		left: 0;
+		animation: bottom-top 6s ease-in-out infinite;
+	}
+
+	&:nth-child(3) {
+		left: auto;
+		right: 0;
+		animation: bottom-top-right 6s ease-in-out infinite;
+		// transform: translate(50%, -50%);
+	}
+
+	.artwork__related--left-right & {
+		&:nth-child(1) {
+			left: 0;
+			animation: top-bottom 6s ease-in-out infinite;
+		}
+
+		&:nth-child(2) {
+			left: auto;
+			right: 0;
+			animation: bottom-top-right 6s ease-in-out infinite;
+			// transform: translate(50%, -50%);
+		}
+	}
+}
+
+
+@keyframes top-bottom { 
+	0% {
+		transform: translate(-50%, -40%);
+    } 50% { 
+        transform: translate(-50%, -60%);
+    } 100% { 
+        transform: translate(-50%, -40%);
+    }
+}
+
+@keyframes bottom-top { 
+	0% {
+		transform: translate(-50%, -60%);
+    } 50% { 
+        transform: translate(-50%, -40%);
+    } 100% { 
+        transform: translate(-50%, -60%);
+    }
+}
+
+@keyframes bottom-top-right { 
+	0% {
+		transform: translate(50%, -60%);
+    } 50% { 
+        transform: translate(50%, -40%);
+    } 100% { 
+        transform: translate(50%, -60%);
+    }
+}

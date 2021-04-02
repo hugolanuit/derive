@@ -1,0 +1,366 @@
+@font-face {
+    font-family: 'Tobias';
+    src: local('Tobias'), url('../../fonts/Tobias-Light.eot')  format('eot'),
+         local('Tobias'), url('../../fonts/Tobias-Light.woff2')  format('woff2'),
+   		 local('Tobias'), url('../../fonts/Tobias-Light.woff')  format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Tobias';
+    src: local('Tobias'), url('../../fonts/Tobias-Regular.eot')  format('eot'),
+         local('Tobias'), url('../../fonts/Tobias-Regular.woff2')  format('woff2'),
+         local('Tobias'), url('../../fonts/Tobias-Regular.woff')  format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suisse';
+    src: local('Suisse'), url('../../fonts/SuisseIntl-Light-WebS.eot')  format('eot'),
+         local('Suisse'), url('../../fonts/SuisseIntl-Light-WebS.woff2')  format('woff2'),
+         local('Suisse'), url('../../fonts/SuisseIntl-Light-WebS.woff')  format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suisse';
+    src: local('Suisse'), url('../../fonts/SuisseIntl-Medium-WebS.eot')  format('eot'),
+         local('Suisse'), url('../../fonts/SuisseIntl-Medium-WebS.woff2')  format('woff2'),
+         local('Suisse'), url('../../fonts/SuisseIntl-Medium-WebS.woff')  format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+html, body {
+    @extend .body_font;
+    font-size: $base_size;
+}
+
+a, button {
+    cursor: pointer;
+    color: currentColor;
+    text-decoration: none;
+    transition: color 400ms;
+
+    &.a--underline {
+        text-decoration: underline;
+    }
+
+    &.hover--bourgogne:hover {
+        color: $bourgogne;
+    }
+
+     &.hover--red:hover {
+        color: $red;
+    }
+}
+
+
+.body_font {
+	font-family: $body_font;
+	line-height: 1.4;
+	letter-spacing: 0.025em;
+    font-weight: normal;
+}
+
+.alternate_font {
+	font-family: $alternate_font;
+	line-height: 1.3;
+	font-weight: normal;
+	letter-spacing: normal;
+    font-weight: normal;
+}
+
+html, body {
+	@extend .body_font;
+	font-size: $base_size;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	@extend .body_font;
+    margin: 0;
+
+    & + p, & + ul {
+        margin-top: $vertical_rythm;
+    }
+}
+
+p {
+    margin: 0;
+
+    & + p {
+        margin-top: $vertical_rythm/2;
+    }
+
+    & + ul, & + blockquote {
+        margin-top: $vertical_rythm;
+    }
+
+}
+
+ul{
+    margin: 0;
+
+    & + p, & + ul {
+        margin-top: $vertical_rythm;
+    }
+}
+
+strong {
+    @extend .alternate_font;
+}
+
+blockquote {
+    padding: 0;
+    margin: 0;
+    @extend .alternate_font;
+
+    p {
+        display: inline;
+    }
+
+    &:before {
+        content: '\201C';
+        margin-right: 0.1em;
+    }
+
+    &:after {
+        content: '\201D';
+        margin-left: 0.1em;
+    }
+
+    & + cite {
+        margin-top: $vertical_rythm/4;
+    }
+
+    & + p, & + ul {
+        margin-top: $vertical_rythm;
+    }
+}
+
+cite {
+    font-style: normal;
+    display: block;
+
+    & + blockquote {
+        margin-top: $vertical_rythm;
+    }
+
+    & + p, & + ul {
+        margin-top: $vertical_rythm;
+    }
+}
+
+
+.base {
+	font-size: $base_size;
+}
+
+.slight {
+    font-size: $slight_size;
+}
+
+.slight_medium {
+    font-size: $slight_medium_size;
+}
+
+.medium {
+    font-size: $medium_size--mobile;
+
+    @media #{$desktop} {
+        font-size: $medium_size
+    }
+}
+
+.medium_large {
+    font-size: $medium_large_size;
+}
+
+
+.large {
+    font-size: $large_size;
+}
+
+.big {
+    font-size: $big_size--mobile;
+    line-height: 1.1;
+
+    @media #{$desktop} {
+        font-size: $big_size
+    }
+}
+
+.huge {
+    font-size: $huge_size--mobile;
+    line-height: 1.1;
+
+    @media #{$desktop} {
+        font-size: $huge_size
+    }
+}
+ @media #{$desktop} {
+    .base--desktop {
+        font-size: $base_size;
+    }
+
+    .slight--desktop {
+        font-size: $slight_size;
+    }
+
+    .slight_medium--desktop {
+        font-size: $slight_medium_size;
+    }
+
+    .medium--desktop {
+        font-size: $medium_size
+    }
+
+    .medium_large--desktop {
+        font-size: $medium_large_size;
+    }
+
+
+    .large--desktop {
+        font-size: $large_size;
+    }
+
+    .big--desktop {
+        font-size: $big_size;
+    }
+
+    .huge--desktop {
+        font-size: $huge_size;
+    }
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media #{$desktop} {
+    .text-right--desktop {
+        text-align: right;
+    }
+
+    .text-left--desktop {
+        text-align: left;
+    }
+
+    .text-center--desktop {
+        text-align: center;
+    }
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.red {
+    color: $red;
+}
+
+
+.bourgogne {
+    color: $bourgogne;
+}
+
+.alternative-fonts {
+    > * {
+        line-height: 1.1;
+
+        &:nth-child(odd){
+            padding-bottom: .1em;
+            @extend .alternate_font;
+            line-height: 1.1;
+        }
+
+        // &:hover {
+        //     &:nth-child(odd){
+        //         @extend .body_font;
+        //     }
+
+        //     &:nth-child(even){
+        //         @extend .alternate_font;
+        //     }
+        // }
+    }
+}
+
+.left-right, .left-right-center, .left-right-left-center {
+    > * {
+        display: block;
+        text-align: right;
+        line-height: 1.1;
+
+        &:nth-child(odd){
+            text-align: left;
+            padding-bottom: .1em;
+            @extend .alternate_font;
+            line-height: 1.1;
+        }
+    }
+
+    @media #{$mobile} {
+        max-width: 280px;
+        margin: auto;
+    }
+}
+
+.left-right-center {
+    > * {
+
+        &:nth-child(n+3){
+            text-align: center;
+        }
+    }
+}
+
+.left-right-left-center {
+    > * {
+
+        &:nth-child(n+4){
+            text-align: center;
+        }
+    }
+}
+
+.text_display {
+    p {
+        font-size: $slight_size;
+
+        &:first-child {
+            font-size: $medium_size;
+        }
+    }
+
+    blockquote {
+        font-size: $medium_size;
+
+        p {
+            font-size: $medium_size;
+        }
+    }
+
+    &.text_display--no-lead {
+         p {
+            &:first-child {
+                font-size: $slight_size;
+            }
+        }
+    }
+}

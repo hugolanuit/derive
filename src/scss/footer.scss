@@ -1,0 +1,14 @@
+@import "all/settings";
+
+footer {
+	// background-color: $bourgogne;
+	// color: $white;
+	padding: $vertical_rythm/2 0;
+	margin-top: -90px;
+	position: relative;
+	z-index: 50;
+
+	.container {
+		overflow: hidden;
+	}
+}

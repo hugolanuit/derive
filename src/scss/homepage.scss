@@ -1,0 +1,25 @@
+@import "all/settings";
+
+// header {
+// 	color: $white;
+// }
+
+.home__intro {
+	span {
+		display: inline-block;
+		opacity: 0;
+		transform: translate(0, 100%);
+		transition: opacity 700ms 600ms ease-in-out, transform 700ms 300ms cubic-bezier(0.25, 0.50, 0.3, 1);
+
+		@for $i from 1 through 10 {
+		  &:nth-child(#{$i}) {
+		  	transition: opacity 700ms (($i * 100ms) + 500ms) ease-in-out, transform 700ms (($i * 100ms) + 200ms) cubic-bezier(0.25, 0.50, 0.3, 1);
+		  }
+		}
+
+		.initialized-3 .page--initialized & {
+			opacity: 1;
+			transform: translate(0, 0);
+		}
+	}
+}
